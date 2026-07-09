@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --lc-primary: #16a34a;
+  --lc-secondary: #1e293b;
+  --lc-accent: #f59e0b;
+  --lc-bg: #f8fafc;
+  --lc-card: rgba(255, 255, 255, 0.82);
+  --lc-text: #0f172a;
+  --lc-muted: #475569;
+  --lc-border: #e5e7eb;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(22, 163, 74, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(245, 158, 11, 0.1), transparent 24%),
+    var(--lc-bg);
+  color: var(--lc-text);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(1180px, calc(100% - 2rem));
+}
+
+.glass-card {
+  background: var(--lc-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(229, 231, 235, 0.7);
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #16a34a, #10b981 70%, #f59e0b);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  border-radius: 999px;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(22, 163, 74, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 14px 24px rgba(22, 163, 74, 0.28);
+}
+
+.btn-secondary {
+  border-radius: 999px;
+  border: 1px solid #dbe4ea;
+  background: rgba(255, 255, 255, 0.86);
+  font-weight: 600;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #cbd5e1;
+  background: white;
+}
+
+.input-modern {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #d7dee6;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.8rem 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-modern:focus {
+  border-color: rgba(22, 163, 74, 0.7);
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.12);
+}
+
+.section-soft {
+  border-top: 1px solid #eef2f7;
+  border-bottom: 1px solid #eef2f7;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 250, 252, 0.7));
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
